@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anurag Anand - Game Developer</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+            text-align: center;
+        }
+
+        /* Header */
+        header {
+            background: #222;
+            color: white;
+            padding: 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        /* Navigation Styling */
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 10px;
+        }
+
+        nav ul li a {
+            display: inline-block;
+            padding: 10px 15px;
+            color: white;
+            background: #444;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 5px;
+            transition: background 0.3s ease, transform 0.2s;
+        }
+
+        nav ul li a:hover {
+            background: #666;
+            transform: scale(1.05);
+        }
+
+        /* About Section */
+        .about-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+            margin-left: 70px;
+            margin-right: 70px;
+        }
+
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #333;
+        }
+
+        /* Sections */
+        section {
+            padding: 50px 20px;
+            background: white;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+        }
+
+        /* Projects */
+        .project {
+            margin: 40px auto;
+            
+        }
+
+        hr {
+            border: none;  /* Remove the default border */
+            height: 4px;  /* Set the thickness */
+            background-color: rgb(203, 203, 203);  /* Change the color */
+            width: 50%;  /* Set the width */
+            margin: auto; /* Center it */
+        }
+
+        .project img.app-icon {
+            width: 100px;
+            height: 100px;
+            border-radius: 20px;
+            margin-bottom: 10px;
+        }
+
+        .project iframe {
+            width: 100%;
+            max-width: 560px;
+            height: 315px;
+            border-radius: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #222;
+            color: white;
+            text-decoration: none;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+
+        /* Skills */
+        #skills ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #skills li {
+            background: #ddd;
+            display: inline-block;
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+        }
+
+        /* Contact */
+        #contact a {
+            color: #222;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .about-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .project iframe {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Anurag Anand</h1>
+        <p>Indie Game Developer | Unity & C# | AR Enthusiast</p>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about-container">
+            <img src="images/me.png" alt="Anurag Anand" class="profile-photo">
+            <p>Hi, I'm Anurag Anand, an indie game developer passionate about creating engaging mobile games. I've developed successful titles like <strong>Extreme Balancer 3 (50M+ downloads)</strong> and <strong>Risky Runaway</strong>. I specialize in Unity, C#, and level design.</p>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project">
+            <img src="images/eb3icon.png" alt="Extreme Balancer 3 Icon" class="app-icon">
+            <h3>Extreme Balancer 3</h3>
+            <p>A physics-based balancing game with 50M+ downloads.</p>
+            <iframe src="https://www.youtube.com/embed/bgPcFlO8LB4" frameborder="0" allowfullscreen></iframe>
+            <br>
+            <a href="https://apps.apple.com/in/app/extreme-balancer-3/id1441976758" class="btn">App Store</a>
+            <a href="https://play.google.com/store/apps/details?id=com.enteriosoft.extremebalancer3&hl=en_IN" class="btn">Google Play</a>
+        </div>
+        <hr>
+        <div class="project">
+            <img src="images/icon.png" alt="Risky Runaway Icon" class="app-icon">
+            <h3>Risky Runaway</h3>
+            <p>A challenging platformer with exciting obstacles.</p>
+            <iframe src="https://www.youtube.com/embed/u7iKIB5Lc8k" frameborder="0" allowfullscreen></iframe>
+            <br>
+            <a href="https://apps.apple.com/in/app/risky-runaway/id6738691960" class="btn">App Store</a>
+            <a href="https://play.google.com/store/apps/details?id=com.enteriosoft.riskyrunaway&hl=en_IN" class="btn">Google Play</a>
+        </div>
+        <hr>
+        <div class="project">
+            <img src="images/ar.png" alt="AR Real Animals" class="app-icon">
+            <h3>AR Real ANimals</h3>
+            <p>A challenging platformer with exciting obstacles.</p>
+            <iframe src="https://www.youtube.com/embed/bhGIiVpBj2I?si=UVPP6mUdMA2bmIsk" frameborder="0" allowfullscreen></iframe>
+            <br>
+            <a href="https://apps.apple.com/in/app/ar-real-animals/id1454653953" class="btn">App Store</a>
+            <a href="https://play.google.com/store/apps/details?id=com.enteriosoft.arrealanimals&hl=en_IN" class="btn">Google Play</a>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Skills & Tools</h2>
+        <ul>
+            <li>Unity (C#)</li>
+            <li>Level & Game Design</li>
+            <li>Blender & Inkscape</li>
+            <li>Augmented Reality (AR)</li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Email: anuraganand.enteriosoft@gmail.com</p>
+        <p>Phone: 6206393295</p>
+        <p>LinkedIn: <a href="#">linkedin.com/in/anuraganand</a></p>
+    </section>
+
+    <footer>
+        <p>© 2025 Anurag Anand</p>
+    </footer>
+</body>
+</html>
