@@ -6,202 +6,312 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
     <title>Anurag Anand - Game Developer</title>
     <style>
-        /* General Styles */
-        body {
-            font-family: Arial, sans-serif;
+        /* CSS resets for consistency */
+        body, h1, h2, h3, p, ul, li {
             margin: 0;
             padding: 0;
-            background: #f4f4f4;
+            box-sizing: border-box;
+        }
+
+        /* General Styles */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
             text-align: center;
+        }
+
+        /* Container for sections */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
         }
 
         /* Header */
         header {
-            background: #222;
+            background: #2c3e50;
             color: white;
-            padding: 20px;
+            padding: 40px 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         header h1 {
-            margin: 0;
-            font-size: 2em;
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5em;
+            font-weight: 600;
         }
 
-        /* Navigation Styling */
+        header p {
+            font-size: 1.1em;
+            margin-top: 5px;
+        }
+
+        /* Navigation */
+        nav {
+            background: #34495e;
+            padding: 10px 0;
+        }
+
         nav ul {
             list-style: none;
-            padding: 0;
-            text-align: center;
-        }
-
-        nav ul li {
-            display: inline-block;
-            margin: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
         }
 
         nav ul li a {
-            display: inline-block;
-            padding: 10px 15px;
             color: white;
-            background: #444;
             text-decoration: none;
-            font-size: 18px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1em;
+            font-weight: 400;
+            padding: 10px 15px;
             border-radius: 5px;
             transition: background 0.3s ease, transform 0.2s;
         }
 
         nav ul li a:hover {
-            background: #666;
-            transform: scale(1.05);
-        }
-
-        /* About Section */
-        .about-container {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-            max-width: 900px;
-            margin: auto;
-            padding: 20px;
-            margin-left: 100px;
-            margin-right: 100px;
-        }
-
-        .about-container p {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 18px;
-            font-weight: 400;
-            line-height: 1.6;
-            color: #333;
-        }
-
-        .profile-photo {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid #333;
+            background: #1abc9c;
+            transform: translateY(-2px);
         }
 
         /* Sections */
         section {
-            padding: 50px 20px;
             background: white;
-            margin: 20px auto;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            max-width: 900px;
+            margin: 30px auto;
+            padding: 50px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
-        /* Projects */
-        .project {
-            margin: 40px auto;
-            
+        section h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
         }
 
-        /* Project Details Styling */
-        .project-details {
-            list-style-type: none;
-            padding: 0;
-            text-align: center;
+        section h2::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            background: #1abc9c;
+            position: absolute;
+            left: 50%;
+            bottom: -10px;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        /* About Section */
+        #about .about-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
         }
 
-        .project-details li {
-            font-size: 16px;
-            padding: 5px 0;
+        #about .profile-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #1abc9c;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        #about p {
+            max-width: 700px;
+            font-size: 1.1em;
+            line-height: 1.8;
             color: #555;
+            font-weight: 400;
         }
 
-        hr {
-            border: none;  /* Remove the default border */
-            height: 4px;  /* Set the thickness */
-            background-color: rgb(203, 203, 203);  /* Change the color */
-            width: 50%;  /* Set the width */
-            margin: auto; /* Center it */
+        /* Projects Section */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 30px;
         }
 
-        .project img.app-icon {
+        .project-card {
+            background: #fafafa;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-card .app-icon {
             width: 100px;
             height: 100px;
             border-radius: 20px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+        }
+
+        .project-card h3 {
+            font-size: 1.5em;
+            color: #2c3e50;
             margin-bottom: 10px;
         }
 
-        .project iframe {
+        .project-card p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .project-card .project-details {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .project-card .project-details li {
+            color: #555;
+            margin: 5px 0;
+        }
+
+        .project-card iframe {
             width: 100%;
-            max-width: 560px;
-            height: 315px;
-            border-radius: 10px;
+            aspect-ratio: 16 / 9;
+            border-radius: 8px;
+            border: none;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-links {
+            margin-top: 20px;
         }
 
         .btn {
             display: inline-block;
-            padding: 10px 20px;
-            background: #222;
+            padding: 12px 25px;
+            background: #1abc9c;
             color: white;
             text-decoration: none;
-            margin-top: 10px;
-            border-radius: 5px;
-        }
-
-        #about h2 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 28px;
+            border-radius: 50px;
             font-weight: 600;
+            margin: 5px;
+            transition: background 0.3s ease, transform 0.2s;
         }
 
-        /* Skills */
+        .btn:hover {
+            background: #16a085;
+            transform: translateY(-2px);
+        }
+
+        /* Skills Section */
         #skills ul {
             list-style: none;
             padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
         }
 
         #skills li {
-            background: #ddd;
-            display: inline-block;
-            padding: 10px;
-            margin: 5px;
-            border-radius: 5px;
+            background: #ecf0f1;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 1em;
+            color: #555;
+            transition: background 0.3s ease;
         }
 
-        /* Contact */
+        #skills li:hover {
+            background: #bdc3c7;
+        }
+
+        /* Achievements Section */
+        #achievements ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+            margin: 0 auto;
+            max-width: 700px;
+        }
+
+        #achievements li {
+            background: #f8f9fa;
+            border-left: 4px solid #1abc9c;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            line-height: 1.5;
+            position: relative;
+        }
+        
+        #achievements li::before {
+            content: '🏆';
+            position: absolute;
+            left: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5em;
+            color: #1abc9c;
+        }
+
+        #achievements strong {
+            color: #1abc9c;
+        }
+
+        /* Contact Section */
+        #contact p {
+            font-size: 1.1em;
+            margin: 10px 0;
+        }
+
         #contact a {
-            color: #222;
+            color: #1abc9c;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        #contact a:hover {
+            color: #16a085;
+            text-decoration: underline;
         }
 
         /* Footer */
         footer {
-            background: #222;
+            background: #2c3e50;
             color: white;
             text-align: center;
-            padding: 15px;
+            padding: 20px;
             margin-top: 20px;
         }
 
         /* Responsive Design */
         @media screen and (max-width: 768px) {
-            .about-container {
+            header h1 {
+                font-size: 2em;
+            }
+            nav ul {
                 flex-direction: column;
-                text-align: center;
-                margin-left: 0px;
-                margin-right: 0px;
+                gap: 10px;
             }
-
-            .project iframe {
-                height: 250px;
-            }
-
             section {
                 padding: 30px 20px;
-                background: white;
-                margin: 20px auto;
-                border-radius: 10px;
-                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-                max-width: 900px;
+            }
+            .project-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -210,94 +320,106 @@
     <header>
         <h1>Anurag Anand</h1>
         <p>Indie Game Developer | Unity & C# | AR Enthusiast</p>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
     </header>
-
-    <section id="about">
-        <h2>About Me</h2>
-        <div class="about-container">
-            <img src="images/me.png" alt="Anurag Anand" class="profile-photo">
-            <p>Hi, I'm Anurag Anand, an indie game developer passionate about creating engaging mobile games. I've developed successful titles like <strong>Extreme Balancer 3 (50M+ downloads)</strong> and <strong>Risky Runaway</strong>. I specialize in Unity, C#, and level design.</p>
-        </div>
-    </section>
-
-    <section id="projects">
-        <h2>Projects</h2>
-    
-        <!-- Extreme Balancer 3 -->
-        <div class="project">
-            <img src="images/eb3icon.png" alt="Extreme Balancer 3 Icon" class="app-icon">
-            <h3>Extreme Balancer 3</h3>
-            <p>A physics-based balancing game with 50M+ downloads.</p>
-            
-            <iframe src="https://www.youtube.com/embed/bgPcFlO8LB4" frameborder="0" allowfullscreen></iframe>
-            <br>
-            <a href="https://apps.apple.com/in/app/extreme-balancer-3/id1441976758" class="btn">App Store</a>
-            <a href="https://play.google.com/store/apps/details?id=com.enteriosoft.extremebalancer3&hl=en_IN" class="btn">Google Play</a>
-        </div>
-        <hr>
-    
-        <!-- Risky Runaway -->
-        <div class="project">
-            <img src="images/icon.png" alt="Risky Runaway Icon" class="app-icon">
-            <h3>Risky Runaway</h3>
-            <!--<p>A challenging platformer with exciting obstacles.</p>-->
-            <ul class="project-details">
-                <li>🏃 Fast-paced platformer with increasing difficulty</li>
-                <li>🧗 Unique climbing and parkour mechanics</li>
-                <li>🎨 Beautiful low-poly art style</li>
-                <li>🎮 Immersive level design with engaging traps</li>
-            </ul>
-            <iframe src="https://www.youtube.com/embed/u7iKIB5Lc8k" frameborder="0" allowfullscreen></iframe>
-            <br>
-            <a href="https://apps.apple.com/in/app/risky-runaway/id6738691960" class="btn">App Store</a>
-            <a href="https://play.google.com/store/apps/details?id=com.enteriosoft.riskyrunaway&hl=en_IN" class="btn">Google Play</a>
-        </div>
-        <hr>
-    
-        <!-- AR Real Animals -->
-        <div class="project">
-            <img src="images/ar.png" alt="AR Real Animals" class="app-icon">
-            <h3>AR Real Animals</h3>
-            <p>An interactive AR app bringing animals to life.</p>
-            <ul class="project-details">
-                <li>📌 Realistic AR animal models</li>
-                <li>📷 Uses ARKit & ARCore</li>
-                <li>🎥 Control animals and create interactive videos</li>
-            </ul>
-            <iframe src="https://www.youtube.com/embed/bhGIiVpBj2I?si=UVPP6mUdMA2bmIsk" frameborder="0" allowfullscreen></iframe>
-            <br>
-            <a href="https://apps.apple.com/in/app/ar-real-animals/id1454653953" class="btn">App Store</a>
-            <a href="https://play.google.com/store/apps/details?id=com.enteriosoft.arrealanimals&hl=en_IN" class="btn">Google Play</a>
-        </div>
-    </section>
-
-    <section id="skills">
-        <h2>Skills & Tools</h2>
+    <nav>
         <ul>
-            <li>Unity (C#)</li>
-            <li>Level & Game Design</li>
-            <li>Blender & Inkscape</li>
-            <li>Augmented Reality (AR)</li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
-    </section>
+    </nav>
 
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p>Email: anuraganand.enteriosoft@gmail.com</p>
-        <p>Phone: 6206393295</p>
-        <p>LinkedIn: <a href="#">linkedin.com/in/anuraganand</a></p>
-    </section>
+    <main class="container">
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="about-container">
+                <img src="images/me.png" alt="Anurag Anand" class="profile-photo">
+                <p>Hi, I'm Anurag Anand, an indie game developer passionate about creating engaging mobile games. With a focus on **Unity and C#**, I've developed successful titles like **Extreme Balancer 3** (over 50M downloads!) and the fast-paced platformer **Risky Runner**. I'm skilled in the full development lifecycle, from game design and level creation to UI/UX and augmented reality integration. My goal is to craft immersive and memorable experiences that captivate players worldwide.</p>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>My Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <img src="images/eb3icon.png" alt="Extreme Balancer 3 Icon" class="app-icon">
+                    <h3>Extreme Balancer 3</h3>
+                    <p>A highly popular physics-based balancing game that challenges players to navigate a ball through treacherous courses. With over **50 million downloads**, it's a testament to engaging gameplay and thoughtful level design.</p>
+                    <iframe src="https://www.youtube.com/embed/bgPcFlO8LB4" frameborder="0" allowfullscreen></iframe>
+                    <div class="project-links">
+                        <a href="https://apps.apple.com/in/app/extreme-balancer-3/id1441976758" class="btn">App Store</a>
+                        <a href="https://play.google.com/store/apps/details?id=com.enteriosoft.extremebalancer3&hl=en_IN" class="btn">Google Play</a>
+                    </div>
+                </div>
+        
+                <div class="project-card">
+                    <img src="images/icon.png" alt="Risky Runaway Icon" class="app-icon">
+                    <h3>Risky Runaway</h3>
+                    <p>A fast-paced platformer that combines unique climbing mechanics with a beautiful low-poly art style. It features a stunning visual aesthetic and immersive level design with engaging traps and obstacles.</p>
+                    <ul class="project-details">
+                        <li>🏃 Fast-paced platformer with increasing difficulty</li>
+                        <li>🧗 Unique climbing and parkour mechanics</li>
+                        <li>🎨 Beautiful low-poly art style</li>
+                        <li>🎮 Immersive level design with engaging traps</li>
+                    </ul>
+                    <iframe src="https://www.youtube.com/embed/u7iKIB5Lc8k" frameborder="0" allowfullscreen></iframe>
+                    <div class="project-links">
+                        <a href="https://apps.apple.com/in/app/risky-runaway/id6738691960" class="btn">App Store</a>
+                        <a href="https://play.google.com/store/apps/details?id=com.enteriosoft.riskyrunaway&hl=en_IN" class="btn">Google Play</a>
+                    </div>
+                </div>
+        
+                <div class="project-card">
+                    <img src="images/ar.png" alt="AR Real Animals" class="app-icon">
+                    <h3>AR Real Animals</h3>
+                    <p>An interactive augmented reality app that uses **ARKit** and **ARCore** to bring realistic 3D animal models to life in the real world. Users can control the animals and create interactive videos to share with friends.</p>
+                    <ul class="project-details">
+                        <li>📌 Realistic AR animal models</li>
+                        <li>📷 Uses ARKit & ARCore for cross-platform support</li>
+                        <li>🎥 Control animals and create interactive videos</li>
+                    </ul>
+                    <iframe src="https://www.youtube.com/embed/bhGIiVpBj2I?si=UVPP6mUdMA2bmIsk" frameborder="0" allowfullscreen></iframe>
+                    <div class="project-links">
+                        <a href="https://apps.apple.com/in/app/ar-real-animals/id1454653953" class="btn">App Store</a>
+                        <a href="https://play.google.com/store/apps/details?id=com.enteriosoft.arrealanimals&hl=en_IN" class="btn">Google Play</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Skills & Tools</h2>
+            <ul>
+                <li>Unity (C#)</li>
+                <li>Game & Level Design</li>
+                <li>Blender & Inkscape</li>
+                <li>Augmented Reality (AR)</li>
+                <li>UI/UX Design</li>
+                <li>Mobile Game Development</li>
+            </ul>
+        </section>
+        
+        <section id="achievements">
+            <h2>Key Achievements</h2>
+            <ul>
+                <li>Creator of Extreme Balancer 3, which has achieved **50 million+ downloads** on Google Play and significant downloads on iOS, demonstrating its broad appeal and quality.</li>
+                <li>Extreme Balancer 3 was handpicked by **Google** to be part of the prestigious **Google Play Pass**, a recognition that highlights the game's high quality, popularity, and exceptional user engagement.</li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <p>I'm always open to new opportunities and collaborations. Feel free to get in touch!</p>
+            <p><strong>Email:</strong> <a href="mailto:anuraganand.enteriosoft@gmail.com">anuraganand.enteriosoft@gmail.com</a></p>
+            <p><strong>Phone:</strong> <a href="tel:6206393295">+91 6206393295</a></p>
+            <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/anuraganand" target="_blank">linkedin.com/in/anuraganand</a></p>
+        </section>
+    </main>
 
     <footer>
-        <p>© 2025 Anurag Anand</p>
+        <p>© 2025 Anurag Anand. All Rights Reserved.</p>
     </footer>
 </body>
 </html>
